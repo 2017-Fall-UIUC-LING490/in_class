@@ -1,0 +1,14 @@
+read lexc epo.lexc
+define Lexicon
+
+define MultipleFem $[ "+F" ?* "+F" ] ;
+define MultipleDim $[ "+Dim" ?* "+Dim" ] ;
+define MultipleAug $[ "+Aug" ?* "+Aug" ] ;
+
+define Bad [ MultipleFem | MultipleAug | MultipleDim ] ;
+define NotBad ~Bad ;
+
+regex NotBad .o. Lexicon ;
+
+
+! I changed the file

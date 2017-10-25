@@ -1,0 +1,2 @@
+regex [{cat}|{dog}|{horse}] s ;
+view ;
