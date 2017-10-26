@@ -1,0 +1,12 @@
+read lexc arb.lexc
+define Lexicon ;
+
+define Bad [ ?* "+Def" ?* "+Indf" ?* ] ;
+define NotBad ~Bad ;
+
+define Grammar NotBad .o. Lexicon ;
+push Grammar
+
+pairs
+
+

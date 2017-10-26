@@ -1,0 +1,22 @@
+Multichar_Symbols @U.ART.PRESENT@ @U.ART.ABSENT@ +Def +Indf +Nom +Acc +Gen
+
+LEXICON Root
+        Article ;
+
+LEXICON Article
++Def:al      Stems    ;
+0            Stems    ;
+
+
+LEXICON Stems
+kitaab     Case ;   ! book
+
+
+LEXICON Case
++Def+Nom:u     # ;  !   definite nominative
++Def+Acc:a     # ;  !   definite accusative
++Def+Gen:i     # ;  !   definite genative
++Indf+Nom:uN   # ;  ! indefinite nominative
++Indf+Acc:aN   # ;  ! indefinite accusative
++Indf+Gen:iN   # ;  ! indefinite genative
+

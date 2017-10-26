@@ -1,0 +1,6 @@
+read lexc arb.withFlagDiacritics.lexc
+define Lexicon ;
+
+push Lexicon
+pairs
+

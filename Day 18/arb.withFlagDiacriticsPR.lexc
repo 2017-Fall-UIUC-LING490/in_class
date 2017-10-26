@@ -1,0 +1,26 @@
+Multichar_Symbols @P.Definity.Def@  @R.Definity.Def@
+                  @P.Definity.Indf@ @R.Definity.Indf@
+                  +Def +Indf +Nom +Acc +Gen
+
+LEXICON Root
+        Article ;
+
+LEXICON Article
+al@P.Definity.Def@      Stems    ;
+0                       Stems    ;
+
+
+LEXICON Stems
+kitaab     Case ;   ! book
+
+LEXICON Case
++Def+Nom:u     # ;  !   definite nominative
++Def+Acc:a     # ;  !   definite accusative
++Def+Gen:i     # ;  !   definite genative
+ IndefCase ;
+
+LEXICON IndefCase
++Indf+Nom:uN   # ;  ! indefinite nominative
++Indf+Acc:aN   # ;  ! indefinite accusative
++Indf+Gen:iN   # ;  ! indefinite genative
+
