@@ -1,0 +1,15 @@
+read lexc toy.lexc
+define OriginalLexicon
+
+define  Something [? - [ %< | %> ] ]+ ;
+!define Something \[ %< | %> ]+ ;
+
+define HasPlural $[ "+Pl" ] @-> %< ... %> "-" %< Something %> .o. 
+                    "+Pl"    -> 0         ;
+
+define Cleanup %<|%> -> 0 ;
+
+define LexWithDups _eq(OriginalLexicon .o. HasPlural , %< , %> )  ;
+
+re LexWithDups .o. Cleanup ;
+pairs

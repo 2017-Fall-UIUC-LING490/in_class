@@ -1,0 +1,14 @@
+Multichar_Symbols +Sg +Pl
+
+LEXICON Root 
+        Noun ;
+
+LEXICON Noun
+cat     Ninfl ;
+dog     Ninfl ;
+horse   Ninfl ;
+
+LEXICON Ninfl
++Sg:0   # ;
++Pl:+Pl # ;
+
