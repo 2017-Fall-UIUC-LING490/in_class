@@ -1,0 +1,46 @@
+
+define ClosingBracket "^]" ;
+define HasClosingBracket $[ ClosingBracket ] ;
+define NoClosingBracket ~HasClosingBracket ;
+
+define OpeningBracket "^[" ;
+define HasOpeningBracket $[ OpeningBracket ] ;
+define NoOpeningBracket ~HasOpeningBracket ;
+
+define UnmatchedOpeningBracket [ ?* OpeningBracket NoClosingBracket ] ;
+define UnmatchedClosingBracket [ NoOpeningBracket ClosingBracket ?* ] ;
+
+define BracketFilter [ ~UnmatchedOpeningBracket & ~UnmatchedClosingBracket  ] ;
+
+
+define Word [ ? - [ "<" | ">" ] ]+ ;
+
+! def MarkIterative OnsetNucleus @-> %< ... %> || "[ITERATIVE]" _ .o.
+!                  "[ITERATIVE]" -> %< OnsetNucleus %> ;
+
+! def Reduplicate Word @-> "^[" ... 
+
+read lexc msa.lexc
+define OriginalLexicon ;
+
+define PluralLexicon OriginalLexicon .o. $["+Plural"] @-> "<" ... ">" "-" "<" Word ">" .o. "+Plural" -> 0; 
+re _eq(PluralLexicon, "<", ">") .o. "<"|">" -> 0 ;
+pairs
+pop
+
+!define ReduplicatedLexicon "<" PluralLexicon.l ">" "-" "<" PluralLexicon.l ">" ;
+
+
+! re BracketFilter .o. Lexicon ;     ! BracketFilter is applied to the upper side language
+
+!define RemoveBrackets "<" | ">" <-> 0 ;
+
+
+! BracketFilter is applied to the lower side language
+! 
+! Lexicon ∘ BracketFilter = BracketFilter( Lexicon( x )
+!re _eq(ReduplicatedLexicon, "<", ">") .o. RemoveBrackets ;       
+
+
+
+!pairs
