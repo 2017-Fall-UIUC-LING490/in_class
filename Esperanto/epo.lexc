@@ -1,0 +1,26 @@
+Multichar_Symbols +N +Sg +Pl +F +M +Dim +Aug +Acc +Nom ˆGUESSNOUNSTEM
+
+LEXICON Root
+Noun ;
+
+LEXICON Noun
+ˆGUESSNOUNSTEM Nmf ; ! open class guess word
+hund    Nmf;  ! dog
+kat     Nmf;  ! cat
+bird    Nmf;  ! bird
+elefant Nmf;  ! elephant
+
+LEXICON Nmf
++F:in    Nmf; 
++Aug:eg  Nmf;
++Dim:et  Nmf;
+0:0      Nend;
+
+LEXICON Nend
++N+Sg:o     Ncase ;
++N+Pl:oj    Ncase ;
+
+LEXICON Ncase
++Acc:n      # ;
++Nom:0      # ;
+

@@ -1,0 +1,18 @@
+
+define Vowel a | e | i | o | u ;
+define Conson b | c | d | f | g | h | j | k | l | m | n | p | r | s | t | v | z ;
+define PossibleWord [[Vowel | Conson]ˆ>2 & $[Vowel]] "+Guess":0 ;
+
+read lexc epo.lexc
+substitute defined PossibleWord for "ˆGUESSNOUNSTEM"
+define Lexicon
+
+define MultipleFem $[ "+F" ?* "+F" ] ;
+define MultipleAug $[ "+Dim" ?* "+Dim" ] ;
+define MultipleDim $[ "+Aug" ?* "+Aug" ] ;
+
+define Bad [ MultipleFem | MultipleAug | MultipleDim ] ;
+define NotBad ~Bad ;
+
+regex NotBad .o. Lexicon ;
+
