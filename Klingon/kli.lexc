@@ -1,0 +1,94 @@
+Multichar_Symbols [N] [Pl] [Dim] [Aug] [Poss]
+                  [1sg] [1pl] [2sg] [2pl] [3sg] [3pl]
+                  [Loc] [Abl] [Caus] [Ben]
+                  @P.NUM.SENTIENT@ 
+                  @R.NUM.SENTIENT@
+                  @D.NUM.SENTIENT@ 
+                  @P.NUM.BODYPART@
+                  @R.NUM.BODYPART@
+                  @P.NUM.PLURAL@
+                  @D.NUM.PLURAL@
+                  @P.NUM.SINGULAR@
+                  @D.NUM@
+                   
+
+LEXICON Root
+Noun ;
+
+LEXICON Noun
+!QIH       N1;  ! destruction
+!jolpaʼ    N1;  ! transport room
+!paʼ       N1;  ! room
+[human]:teraʼngan Sentient;  ! Earther, Terran
+!tlhIngan  Sentient;  ! Klingon
+[nostril]:tlhon  BodyPart;  ! nostril
+[target]:rayʼ InherentlyPlural; ! target
+[target]:DoS  InherentlySingular;  ! target
+
+
+LEXICON Sentient
+@P.NUM.SENTIENT@ N1 ;
+
+LEXICON BodyPart
+@P.NUM.BODYPART@ N1 ;
+
+LEXICON InherentlyPlural
+@P.NUM.PLURAL@[Pl]:@P.NUM.PLURAL@ N1 ;
+
+LEXICON InherentlySingular
+@P.NUM.SINGULAR@:@P.NUM.SINGULAR@ N1 ;
+
+! Type 1 noun suffixes: Augmentative/diminutive
+LEXICON N1   
+[Aug]:ʼaʼ  N2 ; ! augmentative
+[Dim]:Hom  N2 ; ! diminutive
+0:0        N2 ;
+0:0        #  ;
+
+! Type 2 noun suffixes: Number
+LEXICON N2
+@R.NUM.SENTIENT@[Pl]:@R.NUM.SENTIENT@puʼ   N3 ; ! plural for beings capable of using language
+@R.NUM.BODYPART@[Pl]:@R.NUM.BODYPART@Duʼ   N3 ; ! plural for body parts
+@D.NUM@[Pl]:@D.NUM@mey                     N3 ; ! plural, general usage
+@D.NUM.PLURAL@[Pl][scattered.about]:@D.NUM.PLURAL@mey   N3 ; ! plural, general use, scattered about
+0:0        N3 ;
+0:0        #  ;
+
+! Type 3 noun suffixes: Qualification
+LEXICON N3
+[so.called]:qoq   N4 ;
+[apparent]:Hey    N4 ;
+[undoubtedly]:naʼ N4 ;
+0:0               N4 ;
+0:0               #  ;
+
+! Type 4 noun suffixes: Possession/specification
+LEXICON N4
+@R.NUM.SENTIENT@[1sg][Poss]:@R.NUM.SENTIENT@wIʼ   N5 ; ! my (sentient)
+@R.NUM.SENTIENT@[1sg][Poss][derogatory]:@R.NUM.SENTIENT@wIj   N5 ; ! my (sentient)
+@D.NUM.SENTIENT@[1sg][Poss]:@D.NUM.SENTIENT@wIj   N5 ; ! my (non-sentient)
+@R.NUM.SENTIENT@[1pl][Poss]:@R.NUM.SENTIENT@maʼ   N5 ; ! our (sentient)
+@R.NUM.SENTIENT@[1pl][Poss][derogatory]:@R.NUM.SENTIENT@maj   N5 ; ! our (sentient)
+@D.NUM.SENTIENT@[1pl][Poss]:@D.NUM.SENTIENT@maj   N5 ; ! our (non-sentient)
+@R.NUM.SENTIENT@[2sg][Poss]:@R.NUM.SENTIENT@lIʼ   N5 ; ! your (sentient)
+@R.NUM.SENTIENT@[2sg][Poss][derogatory]:@R.NUM.SENTIENT@lIj   N5 ; ! your (sentient)
+@D.NUM.SENTIENT@[2sg][Poss]:@D.NUM.SENTIENT@lIj   N5 ; ! your (non-sentient)
+@R.NUM.SENTIENT@[2pl][Poss]:@R.NUM.SENTIENT@raʼ   N5 ; ! your (pl) (sentient)
+@R.NUM.SENTIENT@[2pl][Poss][derogatory]:@R.NUM.SENTIENT@raj   N5 ; ! your (pl) (sentient)
+@D.NUM.SENTIENT@[2pl][Poss]:@D.NUM.SENTIENT@raj   N5 ; ! your (pl) (non-sentient)
+[3sg][Poss]:Daj   N5 ; ! his, her, its
+[3pl][Poss]:chaj  N5 ; ! their
+[this]:vam        N5 ;
+[that]:vetlh      N5 ;
+0:0               N5 ;
+0:0               #  ;
+
+! Type 5 noun suffixes: Syntactic markers
+LEXICON N5
+[Loc]:Daq         # ; ! Locative
+[Abl]:voʼ         # ; ! from (ablative)
+[Cau]:moʼ         # ; ! due to, because of (causal)
+[Ben]:vaD         # ; ! for, intended for (benefactive)
+[emphasized]:ʼeʼ  # ; ! "emphasizes that the noun to which it is attached is the topic of the sentence"
+
+
