@@ -1,0 +1,86 @@
+Multichar_Symbols [N] [Aug] [Dim] [Pl] [Poss]
+                  [1sg] [1pl] [2sg] [2pl] [3sg] [3pl]
+                  [Loc]
+                  @P.NUM.SENTIENT@ 
+                  @R.NUM.SENTIENT@ 
+                  @D.NUM.SENTIENT@
+                  @P.NUM.BODYPART@ 
+                  @R.NUM.BODYPART@ 
+                  @P.NUM.SINGULAR@
+                  @R.NUM.SINGULAR@
+                  @P.NUM.PLURAL@  
+                  @D.NUM@
+                  @D.NUM.PLURAL@
+                  
+                  
+LEXICON Root
+        Noun ;
+     
+!LEXICON Verb
+![to.fire][V]:baH Vinf ;
+! 
+!LEXICON Vinf
+![V->N]:wi' Ninf ;
+   
+LEXICON Noun
+![target]:DoS       InherentlySingular ; ! target
+![target]:rayʼ      InherentlyPlural   ; ! target (plural)
+![destruction]:QIH  N1 ; ! destruction
+[Klingon.person]:tlhIngan     Sentient;  ! Klingon
+![nostril]:tlhon               BodyPart;
+
+LEXICON Sentient
+@P.NUM.SENTIENT@  N1 ;
+
+LEXICON BodyPart
+@P.NUM.BODYPART@  N1 ;
+
+LEXICON InherentlySingular 
+@P.NUM.SINGULAR@  N1 ;
+
+LEXICON InherentlyPlural
+@P.NUM.PLURAL@[Pl]:@P.NUM.PLURAL@ N1 ;   
+
+! Type 1 noun suffixes: Augmentative/diminutive
+LEXICON N1
+![Aug]:’a’      N2 ;
+![Dim]:Hom      N2 ;
+0:0            N2 ;
+
+! Type 2 noun suffixes: Number
+LEXICON N2
+!@R.NUM.SENTIENT@[Pl]:@R.NUM.SENTIENT@pu’    N3 ;
+!@R.NUM.BODYPART@[Pl]:@R.NUM.BODYPART@Du’    N3 ;
+!@D.NUM@[Pl]:@D.NUM@mey                      N3 ;
+!@R.NUM.SENTIENT@[Pl][scattered.about]:@R.NUM.SENTIENT@mey        N3 ;
+!@R.NUM.BODYPART@[Pl][scattered.about]:@R.NUM.BODYPART@mey        N3 ;
+!@R.NUM.SINGULAR@[Pl][scattered.about]:@R.NUM.SINGULAR@mey        N3 ;
+0:0                                         N3 ;
+
+LEXICON N3
+![so.called]:qoq   N4;
+![apparent]:Hey    N4;
+![undoubtedly]:na’ N4;
+0:0               N4;
+
+LEXICON N4
+! 1st sg
+@D.NUM.SENTIENT@[1sg][Poss]:@D.NUM.SENTIENT@wIj   N5;
+@R.NUM.SENTIENT@[1sg][Poss][derogatory]:@R.NUM.SENTIENT@wIj   N5;
+@R.NUM.SENTIENT@[1sg][Poss]:@R.NUM.SENTIENT@wI’   N5;
+! 1st pl
+@D.NUM.SENTIENT@[1pl][Poss]:@D.NUM.SENTIENT@maj   N5;
+@R.NUM.SENTIENT@[1pl][Poss]:@R.NUM.SENTIENT@ma’   N5;
+! 2nd sg
+@D.NUM.SENTIENT@[2sg][Poss]:@D.NUM.SENTIENT@lIj   N5;
+@R.NUM.SENTIENT@[2sg][Poss]:@R.NUM.SENTIENT@lI’   N5;
+! 2nd pl
+@D.NUM.SENTIENT@[2pl][Poss]:@D.NUM.SENTIENT@raj   N5;
+@R.NUM.SENTIENT@[2pl][Poss]:@R.NUM.SENTIENT@ra’   N5;
+[3sg][Poss]:Daj   N5;
+[3pl][Poss]:chaj  N5;
+0:0  # ;
+
+LEXICON N5
+[Loc]:Daq   # ;
+
